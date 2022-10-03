@@ -1,0 +1,79 @@
+@import "../../styles/settings.module.scss";
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background-color: $color-black;
+  color: $color-white;
+  border-bottom: 1px solid $color-white;
+  box-sizing: border-box;
+}
+
+.fade_enter {
+  opacity: 0.01;
+}
+
+.fade_enter_active {
+  opacity: 1;
+  transition: opacity 10000ms ease-in;
+}
+
+.priceContainer {
+  display: flex;
+  flex: 1;
+  gap: 20px;
+  box-sizing: border-box;
+  border: 1px soild $color-white;
+  overflow: scroll;
+
+  @media (max-width: $small) {
+    gap: 10px;
+  }
+  @media (max-width: $medium) and (min-width: $small) {
+    gap: 15px;
+  }
+}
+.priceContainer::-webkit-scrollbar {
+  display: none;
+}
+.price {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+
+  @media (max-width: $small) {
+    font-size: 12px;
+  }
+}
+
+.arrow_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+
+  @media (max-width: $small) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.riseIcon {
+  color: $color-green;
+  font-size: 35px;
+
+  @media (max-width: $small) {
+    font-size: 25px;
+  }
+}
+
+.fallIcon {
+  color: $color-red;
+  font-size: 35px;
+
+  @media (max-width: $small) {
+    font-size: 25px;
+  }
+}
