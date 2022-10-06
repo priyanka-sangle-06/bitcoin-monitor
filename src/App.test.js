@@ -1,8 +1,12 @@
-import { render, screen } from "@testing-library/react";
-import App from "./App";
+// import { render, screen } from "@testing-library/react";
+// import App from "./App";
+import { getCurrentPrice } from "./services/coindesk";
 
-test("renders learn react link", () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test("calls coindesk's current price api", () => {
+  expect.assertions(3);
+  return getCurrentPrice().then((data) => {
+    expect(data).toHaveProperty("time");
+    expect(data).toHaveProperty("bpi");
+    expect(data).toHaveProperty("disclaimer");
+  });
 });
